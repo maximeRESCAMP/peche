@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fde28154-07fe-4f49-a799-8a25ad4d6f85" name="Changes" comment="Création des différentes entités avec les différentes relations entre elles">
-      <change beforePath="$PROJECT_DIR$/.idea/peche.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/peche.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="fde28154-07fe-4f49-a799-8a25ad4d6f85" name="Changes" comment="ajout des differents forumaire de connexion et inscription">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +196,8 @@
       <workItem from="1688023390451" duration="7516000" />
       <workItem from="1688031063895" duration="150000" />
       <workItem from="1688111669331" duration="1188000" />
+      <workItem from="1688145177979" duration="93000" />
+      <workItem from="1688145619410" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="Création des différentes entités">
       <created>1688028187724</created>
@@ -217,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688030116163</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ajout des differents forumaire de connexion et inscription">
+      <created>1688145242142</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688145242142</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +240,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Création des différentes entités" />
     <MESSAGE value="Création des différentes entités avec les différentes relations entre elles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création des différentes entités avec les différentes relations entre elles" />
+    <MESSAGE value="ajout des differents forumaire de connexion et inscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout des differents forumaire de connexion et inscription" />
   </component>
 </project>
