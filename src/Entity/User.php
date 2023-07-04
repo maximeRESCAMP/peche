@@ -9,9 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['pseudo'], message: 'Un compte avec ce pseudo existe déja')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -20,7 +22,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: "L'email est obligatoire")]
+    #[Assert\Email(message: "Le champ attend un email")]
+    #[Assert\Length(min: 10, max: 180, minMessage: "L'adresse mail doit être de 10 caractere minimum", maxMessage: "le champ doit être de {{ limit }}caractères maximum")]
     private ?string $email = null;
+
 
     #[ORM\Column]
     private array $roles = [];
@@ -31,13 +37,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Le nom est obligatoire")]
+    #[Assert\Length(min: 3, max: 100, minMessage: "Le nom doit être de 3 caractères minimum", maxMessage: "le champ doit être de {{ limit }}caractères maximum")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Le prénom est obligatoire")]
+    #[Assert\Length(min: 3, max: 100, minMessage: "Le Prénom doit être de 3 caractères minimum", maxMessage: "le champ doit être de {{ limit }}caractères maximum")]
     private ?string $prenom = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 100,unique: true)]
+    #[Assert\NotBlank(message: "Le pseudo est obligatoire")]
+    #[Assert\Length(min: 3, max: 100, minMessage: "Le pseudo doit être de 3 caractères minimum", maxMessage: "le champ doit être de {{ limit }}caractères maximum")]
     private ?string $pseudo = null;
 
     #[ORM\ManyToMany(targetEntity: Lieu::class, mappedBy: 'pecheurs')]

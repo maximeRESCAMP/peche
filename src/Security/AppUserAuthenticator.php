@@ -29,10 +29,10 @@ class AppUserAuthenticator extends AbstractLoginFormAuthenticator
     public function authenticate(Request $request): Passport
     {
         $emailOrUsername  = $request->request->get('email_or_username', '');
-
         $request->getSession()->set(Security::LAST_USERNAME, $emailOrUsername);
 
-        return new Passport(
+      return new Passport(
+
             new UserBadge($emailOrUsername),
             new PasswordCredentials($request->request->get('password', '')),
             [
@@ -47,9 +47,7 @@ class AppUserAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('app_login'));
     }
 
     protected function getLoginUrl(Request $request): string
